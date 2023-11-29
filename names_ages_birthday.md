@@ -1,5 +1,6 @@
-Write the mongo db code that adds 10 documents to the collection "coll" with field name and age, but age is not to appear in all the documents, and some documents are to have birthdays.
+#### Write the mongo db code that adds 10 documents to the collection "coll" with field name and age, but age is not to appear in all the documents, and some documents are to have birthdays.
 
+```
 db.coll.insertMany([
     { name: "Alice", age: 28 },
     { name: "Bob" }, // no age
@@ -12,3 +13,4 @@ db.coll.insertMany([
     { name: "Ivan" }, // no age
     { name: "Julia", age: 31 }
 ])
+```
