@@ -1,0 +1,16 @@
+## Chatgpt4all code for mongodb
+```
+
+db.collection.aggregation([
+  {
+    "$group": {
+      "_id": "$Date",
+      "rows": { "$sum": 1 },
+      "min_sales": { "$min": "$Sales" },
+      "max_sales": { "$max": "$Sales" },
+      "avg_sales": { "$avg": "$Sales" },
+      "median_sales": { "$median": "$Sales" }
+    }
+  }
+])
+```
