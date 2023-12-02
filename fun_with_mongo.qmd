@@ -1,0 +1,35 @@
+---
+title: "Fun-W-Mongo DB"
+format: html
+editor: visual
+---
+
+## Quarto
+
+```{r}
+library(tidyverse)
+library(mongolite)
+```
+
+```{r}
+sales <- read_csv("./store.csv")
+```
+```{r}
+# Connect
+conn <- mongo(collection = "store", db = "super", url = "mongodb://localhost")
+
+# Upload the dataframe
+conn$insert(sales)
+
+
+# Disconnect (optional, but good practice)
+
+
+```
+```{r}
+# Query the database
+results <- conn$find('{}') 
+summary(results)
+```
+
+
